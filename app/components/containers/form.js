@@ -38,6 +38,7 @@ export default class Form extends Component {
 				setMenu: this.setMenu
 			})
 		);
+		
 		return (
 			<div>
 				<Link to="/step_1">step 1</Link>
@@ -47,6 +48,8 @@ export default class Form extends Component {
 					<div className="col s4"></div>
 					{childrenWithProps}
 					<div className="col s4"></div>
+				</div>
+				<div className="row">
 				</div>
 			</div>
 		);

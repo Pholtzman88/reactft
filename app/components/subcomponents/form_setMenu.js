@@ -13,12 +13,14 @@ export default class Form_SetMenu extends Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.handleClick = this.handleClick.bind(this);
 	}
+
 	handleChange(e){
 		let newState = {};
 		newState[e.target.name] = e.target.value;
 		this.setState(newState);
 		console.log(newState);
 	}
+
 	addItem(e){
 		const newItem = {
 			itemName: this.state.itemName,
@@ -32,6 +34,7 @@ export default class Form_SetMenu extends Component {
 			itemDescription: ""
 		})
 	}
+
 	handleClick(e){
 		this.props.setMenu(
 			this.state.menu
@@ -43,8 +46,8 @@ export default class Form_SetMenu extends Component {
 		const listOfItems = items.map(function(item,i){
 			return (
 				<li className="collection-item" key={i}>
-			    	<input value={item.itemName} />
-			      	<input value={item.itemDescription} />
+			    	<input placeholder={item.itemName}/>
+			      	<input placeholder={item.itemDescription}/>
 			    </li>
 			)
 		});

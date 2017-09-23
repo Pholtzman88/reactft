@@ -25616,6 +25616,7 @@
 						setMenu: _this2.setMenu
 					});
 				});
+
 				return _react2.default.createElement(
 					"div",
 					null,
@@ -25640,7 +25641,8 @@
 						_react2.default.createElement("div", { className: "col s4" }),
 						childrenWithProps,
 						_react2.default.createElement("div", { className: "col s4" })
-					)
+					),
+					_react2.default.createElement("div", { className: "row" })
 				);
 			}
 		}]);
@@ -25834,8 +25836,8 @@
 					return _react2.default.createElement(
 						"li",
 						{ className: "collection-item", key: i },
-						_react2.default.createElement("input", { value: item.itemName }),
-						_react2.default.createElement("input", { value: item.itemDescription })
+						_react2.default.createElement("input", { placeholder: item.itemName }),
+						_react2.default.createElement("input", { placeholder: item.itemDescription })
 					);
 				});
 				return _react2.default.createElement(
