@@ -25816,47 +25816,69 @@
 				this.setState({
 					menu: [].concat(_toConsumableArray(this.state.menu), [newItem])
 				});
+				this.setState({
+					itemName: "",
+					itemDescription: ""
+				});
 			}
 		}, {
 			key: "handleClick",
-			value: function handleClick() {
+			value: function handleClick(e) {
 				this.props.setMenu(this.state.menu);
 			}
 		}, {
 			key: "render",
 			value: function render() {
+				var items = this.state.menu;
+				var listOfItems = items.map(function (item, i) {
+					return _react2.default.createElement(
+						"li",
+						{ className: "collection-item", key: i },
+						_react2.default.createElement("input", { value: item.itemName }),
+						_react2.default.createElement("input", { value: item.itemDescription })
+					);
+				});
 				return _react2.default.createElement(
-					"form",
-					{ className: " col s4" },
+					"div",
+					{ className: "col s4" },
 					_react2.default.createElement(
-						"div",
-						{ className: "input-field" },
-						_react2.default.createElement("input", { id: "icon_prefix", type: "text", className: "validate", name: "itemName", value: this.state.name, onChange: this.handleChange }),
+						"form",
+						null,
 						_react2.default.createElement(
-							"label",
-							{ htmlFor: "icon_prefix" },
-							"Item Name"
+							"div",
+							{ className: "input-field" },
+							_react2.default.createElement("input", { id: "icon_prefix", type: "text", className: "validate", name: "itemName", value: this.state.name, onChange: this.handleChange }),
+							_react2.default.createElement(
+								"label",
+								{ htmlFor: "icon_prefix" },
+								"Item Name"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "input-field" },
+							_react2.default.createElement("input", { id: "icon_prefix", type: "text", className: "validate", name: "itemDescription", value: this.state.password, onChange: this.handleChange }),
+							_react2.default.createElement(
+								"label",
+								{ htmlFor: "icon_prefix" },
+								"Item Description"
+							)
+						),
+						_react2.default.createElement(
+							"a",
+							{ className: "waves-effect waves-light btn", onClick: this.addItem },
+							"add item"
+						),
+						_react2.default.createElement(
+							_reactRouter.Link,
+							{ to: "/step_3", className: "waves-effect waves-light btn", onClick: this.handleClick },
+							"next"
 						)
 					),
 					_react2.default.createElement(
-						"div",
-						{ className: "input-field" },
-						_react2.default.createElement("input", { id: "icon_prefix", type: "text", className: "validate", name: "itemDescription", value: this.state.password, onChange: this.handleChange }),
-						_react2.default.createElement(
-							"label",
-							{ htmlFor: "icon_prefix" },
-							"Item Description"
-						)
-					),
-					_react2.default.createElement(
-						"a",
-						{ className: "waves-effect waves-light btn", onClick: this.addItem },
-						"add item"
-					),
-					_react2.default.createElement(
-						_reactRouter.Link,
-						{ to: "/step_3", className: "waves-effect waves-light btn", onClick: this.handleClick },
-						"next"
+						"ul",
+						{ className: "collection" },
+						listOfItems
 					)
 				);
 			}
