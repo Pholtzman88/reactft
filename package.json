@@ -1,0 +1,30 @@
+{
+  "name": "reactft",
+  "version": "1.0.0",
+  "description": "vendor side food truck app",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Patrick Holtzman",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.0",
+    "css-loader": "^0.28.7",
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-router": "^2.4.1",
+    "react-typing-animation": "^1.1.5",
+    "style-loader": "^0.18.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "webpack": "^1.13.1"
+  }
+}
